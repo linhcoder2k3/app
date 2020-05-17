@@ -1,0 +1,26 @@
+RewriteEngine on
+# error
+ErrorDocument 404 /pages/layout/error.php?error=404
+ErrorDocument 500 /pages/layout/error.php?error=500
+
+RewriteRule ^index.html$ index.php [L]
+
+# account
+RewriteRule ^account/([^/]+)(/([^/]+))?$ /pages/account/$1.php [L]
+# admin
+RewriteRule ^admin/([^/]+)(/([^/]+))?$ /pages/admin/$1.php [L]
+
+# main
+RewriteRule ^main/([^/]+)(/([^/]+))?$ /pages/main/$1.php [L]
+
+# tools
+RewriteRule ^tools/([^/]+)(/([^/]+))?$ /pages/tools/$1.php [L]
+
+# app.js
+RewriteRule ^asset/themes/v3/dist/js/app.js$ /pages/layout/app.php [L]
+
+# admin.js
+RewriteRule ^asset/themes/v3/dist/js/admin.js$ /pages/layout/admin.php [L]
+
+# service bot
+RewriteRule ^service/bot/([^/]+)(/([^/]+))?$ /pages/service/bot/$1.php [L]
